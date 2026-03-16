@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
@@ -5,9 +8,9 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.firefox import GeckoDriverManager
 import time
 
-URL = "https://www.agazeta.com.br/hz/gastronomia/qual-municipio-produz-o-melhor-cafe-especial-do-es-vote-na-enquete-de-hz-0326"
-RADIO_ID = "PDI_answer73205146"
-VOTE_BUTTON_ID = "pd-vote-button16704375"
+URL = os.getenv("URL_SITE")
+RADIO_ID = os.getenv("RADIO_ID")
+VOTE_BUTTON_ID = os.getenv("VOTE_BUTTON_ID")
 
 CAMINHO_FIREFOX_DEV = r"C:\Program Files\Firefox Developer Edition\firefox.exe"
 options = FirefoxOptions()
